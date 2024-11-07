@@ -1,0 +1,19 @@
+img{
+    height: 50px;
+    width: 50px;
+    padding-top: 50px;
+    padding-left: 25px;
+}
+h1{
+    font-family: 'Times New Roman';
+}
+.gpz {
+    background-color: #ffffff;
+    overflow: hidden;
+}
+.left{
+    float: left;
+}
+.gpz img{
+    padding: 0 0 14px 16px;
+}

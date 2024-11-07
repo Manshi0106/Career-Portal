@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Profile</title>
+    <link rel="stylesheet" href="profile.css"/>
+</head>
+<body>
+    <div class="gpz">
+        <img class="left" src="Logo Png.png">
+        <a href="prepzone.html"><h3 class="left">GovPrepZone</h3></a>
+    </div>
+    <center>
+        <img src="profile.png">
+    <h1>User</h1>
+    <p>Username: <span id="username"></span></p>
+    <p>Email: <span id="email"></span></p>
+    <button id="openModal">View Scores</button>
+    
+    <!-- The modal (dialog box) -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <h2>Your Test Scores</h2>
+            <table>
+                <tr>
+                    <td>Test 1</td>
+                    <td>      </td>
+                    <td>      </td>
+                    <td>Scores</td>
+                </tr>
+                <tr>
+                    <td>Test 2</td>
+                    <td>      </td>
+                    <td>      </td>
+                    <td>Scores</td>
+                </tr>
+            </table>
+            <button id="closeModal" class="close-button">Close</button>
+        </div>
+    </div>
+</center>
+    <script>
+        // Get the query parameters from the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        
+        // Get the values of "name" and "email" from the URL
+        const name = urlParams.get("username");
+        const email = urlParams.get("email");
+
+        // Display the values in the HTML
+        document.getElementById("username").textContent = name;
+        document.getElementById("email").textContent = email;
+
+        // Get references to the modal and buttons
+        const modal = document.getElementById("myModal");
+        const openBtn = document.getElementById("openModal");
+        const closeBtn = document.getElementById("closeModal");
+
+        // When the open button is clicked, show the modal
+        openBtn.addEventListener("click", () => {
+            modal.style.display = "block";
+        });
+
+        // When the close button is clicked, hide the modal
+        closeBtn.addEventListener("click", () => {
+            modal.style.display = "none";
+        });
+    </script>
+    <style>
+         /* Style for the modal (dialog box) */
+         .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        /* Style for the modal content */
+        .modal-content {
+            background-color: #fff;
+            border-radius: 5px;
+            width: 300px;
+            padding: 20px;
+            margin: 100px auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+        /* Style for the close button */
+        .close-button {
+            background-color: #ff4444;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+    </style>
+    <div>
+        <a href="prepzone.html"> <h3 class="right">Home</h3></a>
+    </div>
+</body>
+</html>
